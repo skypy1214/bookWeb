@@ -2,7 +2,27 @@
 
 ///////////////////////////////////////
 //////////////////상호//////////////////
-                                     
+let btnR = document.querySelector("#btnR");
+let btnL = document.querySelector("#btnL");
+let item = document.querySelectorAll(".slideItem")
+let slider = document.querySelector(".bestSeller-sell-move")
+
+
+let itemlength =item.length
+let move = 100
+let itemIndex = 0
+btnL.addEventListener("click",function(){
+    //왼쪽으로 움직이는 기능만 구현 정확한 픽셀값 아직 안됨
+    if(itemIndex <= item.length){
+        slider.style.transform = "translate(" + 100 * (itemIndex + 1)+"px)"
+    }
+    console.log(itemIndex)
+    item[++itemIndex]
+    
+
+})
+
+
 ///////////////////////////////////////
 //////////////////수근//////////////////
 
