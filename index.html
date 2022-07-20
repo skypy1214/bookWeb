@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GBooks Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 
 <body>
@@ -15,8 +17,12 @@
         <div class="header">
             <!-- logo & login section start -->
             <div class="headerTop">
-                <div class="logo"></div>
-                <div class="loginIcon"></div>
+                <div class="logoFrame">
+                    <img src="logo.png" alt="" id="logo">
+                </div>
+                <div class="loginIcon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
             </div>
             <!-- logo & login section end -->
 
@@ -116,17 +122,102 @@
         </div>
         <!-- header section end -->
 
+        <div class="loginModal" style="display: none;">
+            <div class="lgModal">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="modalTitle">Sign In</div>
+                <div class="inputBox">
+                    <div class="userName">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="userName" placeholder="User Name">
+                    </div>
+                    <div class="passwd">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="passwd" placeholder="Password">
+                    </div>
+
+                    <button id="modalBtn">Sign In</button>
+                </div>
+                <div class="modalCheckBox">
+                        <p id="signUp">아직 회원이 아니신가요?<a href="">회원 가입</a></p>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- 신간 도서 section start -->
         <div class="newBook">
-            
+
         </div>
         <!-- 신간 도서 section end -->
 
         <!-- 장르별 도서 section start -->
         <div class="genreBook">
-
-        </div>
+            <h2 class="gb_mtit">장르별 도서</h2>
+                <div class="gb_cont">
+                    <ul>
+                        <li class="gb_item">
+                            <div class="gb_box">
+                                <div class="gb_thumb">
+                                    <a href="genreBookpage.html">
+                                        <img src="img/local1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="gb_tagList">
+                                    <a href="">국내도서 추가정보<br>
+                                        더보기 <i class="xi-plus-square-o"></i></a>                                    
+                                </div>
+                                <span class="gb_genre">국내도서</span>                                 
+                            </div>
+                        </li> 
+                        
+                        <li class="gb_item">
+                            <div class="gb_box">
+                                <div class="gb_thumb">
+                                    <a href="genreBookpage.html">
+                                        <img src="img/oversea1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="gb_tagList">
+                                    <a href="">해외도서 추가정보<br>
+                                        더보기 <i class="xi-plus-square-o"></i></a>
+                                </div>
+                                <span class="gb_genre">해외도서</span>                                 
+                            </div>
+                        </li> 
+                        <li class="gb_item">
+                            <div class="gb_box">
+                                <div class="gb_thumb">
+                                    <a href="genreBookpage.html">
+                                        <img src="img/ebook1.JPG" alt="">
+                                    </a>
+                                </div>
+                                <div class="gb_tagList">
+                                    <a href="">eBook<br>추가정보<br>
+                                        더보기 <i class="xi-plus-square-o"></i></a>
+                                </div>
+                                <span class="gb_genre">eBook</span>                                 
+                            </div>
+                        </li> 
+                        <li class="gb_item">
+                            <div class="gb_box">
+                                <div class="gb_thumb">
+                                    <a href="genreBookpage.html">
+                                        <img src="img/webbook1.jpg"alt="">
+                                    </a>
+                                </div>
+                                <div class="gb_tagList">
+                                    <a href="">웹소설<br>추가정보<br>
+                                        더보기 <i class="xi-plus-square-o"></i></a>
+                                </div>
+                                <span class="gb_genre">웹소설</span>                                 
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+        </div>         
+        
         <!-- 장르별 도서 section end -->
 
         <!-- reivew section start -->
@@ -137,16 +228,40 @@
 
         <!-- footer start -->
         <div class="footer">
-
+            <div class="icons">
+                <div class="iconFrame">
+                    <i class="fa-brands fa-facebook-f ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-brands fa-instagram ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-brands fa-twitter ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-solid fa-map-location-dot ficon"></i>
+                </div>
+            </div>
+            <div class="footerScroll">
+                <ul>
+                    <li>HOME</li>
+                    <li>|</li>
+                    <li>신간도서</li>
+                    <li>|</li>
+                    <li>장르별 도서</li>
+                    <li>|</li>
+                    <li>리뷰</li>
+                </ul>
+            </div>
         </div>
         <!-- footer end -->
-
+        
         <!-- loading img section start -->
         <div class="loadingImg">
-
+            <img src="loading.gif" alt="">
         </div>
         <!-- loading img section end -->
-
+        
         <!-- js file link -->
         <script src="script.js"></script>
     </div>

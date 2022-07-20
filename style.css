@@ -4,20 +4,31 @@
     box-sizing: border-box;
 
 }
+
+li{
+    list-style-type: none;
+}
+
 body{
     display: flex;
     justify-content: center;
 }
+
 a{
     text-decoration: none;
 }
+=======
+
+
+
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
-    background-color: rgb(64, 135, 201);
+    /* background-color: rgb(64, 135, 201); */
     height: 400vh;
+    z-index: 1;
 }
 
 .header{
@@ -101,6 +112,7 @@ a{
 .bestSeller-sell, .bestSeller-book{
     margin: 0 25px;
 }
+
 .bestSeller > i{
     /* 아이콘 사이즈 조절 */
     font-size: 2.4rem;
@@ -148,10 +160,72 @@ a{
     border: 1px solid black;
     top: 98px;
     background-color: rgba(153,153,153, 0.5);
+=======
+
+.headerTop{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.headerTop .logoFrame {
+    display: flex;
+    justify-content: center;
+}
+
+.headerTop .loginIcon{
+    display: flex;
+    text-align: right;
+    /* background-color: red; */
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.loginModal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+.loginModal .fa-xmark{
+    font-size: 2rem;
+    transform: translate(470px,10px);
+    opacity: 0.4;
+}
+
+.loginModal .lgModal{
+    width: 500px;
+    height: 550px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginModal .modalTitle{
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 20px;
+    /* background-color: brown; */
+}
+
+.loginModal .inputBox{
+    width: 80%;
+    height: 350px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     display: none;
 
 }
@@ -173,6 +247,74 @@ a{
 }
 
 /* /////////////이상호/////////// */
+=======
+    /* background-color: lightcoral; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+.inputBox .fa-user, .inputBox .fa-lock{
+    font-size: 2rem;
+    transform: translate(0,5px);
+}
+
+.inputBox input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.userName, .passwd{
+    transform: translate(0,-20px);
+    margin: 10px;
+}
+
+.inputBox #modalBtn{
+    width: 85%;
+    padding: 5px;
+    font-size: 2.4rem;
+    margin-top: 10px;
+    background-color: rgb(64, 135, 201);
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+#signUp{
+    margin-top: 15px;
+    font-size: 1.2rem;
+
+}
+
+#signUp a{
+    padding: 5px;
+    color: rgb(21, 89, 153);
+    text-decoration: none;
+}
+
+#signUp a:hover{
+    font-weight: bold;
+}
+
+
+.modalCheckBox .check{
+    margin: 10px 60px;
+    text-align: center;
+    display: inline-block;
+}
+
+.loginIcon .fa-user{
+    font-size: 2.5rem;
+    padding: 5px;
+}
+
+#logo{
+    width: 150px;
+    text-align: left;
+}
+
 
 .newBook{
     border: 1px solid blue;
@@ -183,16 +325,167 @@ a{
     border: 1px solid black;
     width: 100%;
     height: 800px;
+    text-align: center;
 }
 .reviewBook{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     height: 800px;
 }
 
 
 .footer{
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 백진주 영역--------------------------------------------------- */
+/* 장르별 도서 */
+.gb_mtit{
+    font-size: 2.5rem;
+    padding: 20px 0px;
+}
+.gb_cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.gb_item {
+    display: inline-block;
+    margin: 20px 20px;
+    text-align: center;
+}
+.gb_box{
+    position: relative;
+    
+}
+.gb_thumb img{
+    width: 200px;
+    height: 300px;
+}
+/* 호버기능을 위한 숨긴 공간 */
+.gb_tagList{
+    overflow: hidden;
+    position: absolute;
+    background:linear-gradient(#ffffff,white);
+    width: 200px;
+    height: 0px;    
+    bottom: 36px;    
+    transition: all 1.5s ease;
+}
+/* 목록 box 호버시 이미지 라인 표현 */
+/* .gb_box:hover .gb_thumb img{
+    border: 3px solid blue;
+} */
+/* 목록 box 선택시 아래에서 위로 호버기능 */
+.gb_box:hover .gb_tagList{    
+    height: 200px;    
+    opacity: 0.7; 
+}
+.gb_tagList a{
+    padding-top: 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(79, 79, 235);
+    font-size: 2.5rem;
+    font-weight: 1300;
+}
+.gb_genre{
+    font-size: 1.5rem;
+}
+
+
+/* 장르별 도서 새페이지영역*/
+.genre_mid_slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 550px;    
+    /* background-color: blueviolet; */
+    overflow: scroll;
+}
+.genre_mid_slide_box{
+    text-align: center;
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+    border: 3px solid blue;
+    /* background-color: blue; */
+}
+.genre_mid_slide_box a{
+    text-decoration: none;
+    color: blue;
+}
+
+.genre_thumb img{
+    width:194px;
     height: 150px;
+=======
+
+.icons{
+    width: 100%;
+    height: 100px;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(15, 15, 155, 0.377);
+}
+
+.footer .icons .iconFrame{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(30, 83, 133);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.iconFrame .ficon {
+    font-size: 1.5rem;
+    filter: invert();
+}
+.footerScroll{
+    /* background-color: red; */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerScroll ul li{
+    display: inline-block;
+    margin: 10px;
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.loadingImg{
+    background-color: rgb(175, 215, 233);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.loadingImg.fadeOut{
+    display: none;
+
 }
